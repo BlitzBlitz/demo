@@ -1,3 +1,65 @@
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  25% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-section {
+  transform: translateX(100%);
+}
+.fade-in-section2 {
+  opacity: 0;
+}
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +84,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: fadeIn 2s;
 }
 
 .title {
@@ -32,6 +95,7 @@ body {
   -webkit-text-fill-color: transparent;
   margin-top: 1rem;
   text-align: center;
+  animation: slideIn 1.5s;
 }
 
 .contact-form {
@@ -41,16 +105,23 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1rem 2.5rem;
-  margin-top: 10rem;
   max-width: 60%;
-  border-radius: 3rem;
+  border-radius: 2rem;
+  animation: fadeIn2 2.5s;
 }
 
-.contact-form > img {
+.page-not-found {
   width: 50%;
-  margin-top: -7em;
+  animation: popIn 1.5s;
 }
-
+.contact-img {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: -3rem;
+  z-index: 2;
+}
 .contact-info {
   display: flex;
   padding: 1em;
@@ -83,13 +154,22 @@ body {
 .contact-input,
 .contact-submit {
   width: 100%;
-  padding: 1.5em 2em;
+  padding: 1.5em 0 1.5em 4em;
   border-radius: 2rem;
   margin: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   border: 0;
 }
 
+.input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-field > span {
+  position: absolute;
+  left: 2em;
+}
 .contact-submit {
   background: -webkit-linear-gradient(103deg, #8ad1f1, #7a89d8);
   color: white;
@@ -138,7 +218,7 @@ body {
   position: absolute;
   left: 16.7vw;
   top: 10vh;
-  width: 80%;
+  width: 90%;
   height: 70%;
   background-image: linear-gradient(121deg, #7a89d8, #8ad1f1);
 }
@@ -160,6 +240,9 @@ footer {
   align-items: center;
   justify-content: center;
   width: 43%;
+}
+.footer-right * {
+  margin-left: 1em;
 }
 
 @media (max-width: 550px) {
@@ -198,7 +281,7 @@ footer {
   .contact-input,
   .contact-submit {
     width: 100%;
-    padding: 1.5em 1em;
+    padding: 1.5em 3em;
     border-radius: 2rem;
     margin: 0.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
@@ -210,7 +293,7 @@ footer {
     padding: 1em 1em;
   }
   .main {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 0;
   }
   .main-left,
@@ -223,11 +306,12 @@ footer {
   .main-right > img {
     width: 100%;
   }
+
   .gradient {
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 90%;
+    left: 10em;
+    top: 3em;
+    width: 80%;
+    height: 80%;
     background-image: linear-gradient(121deg, #7a89d8, #8ad1f1);
   }
   footer {
