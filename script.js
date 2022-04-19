@@ -13,7 +13,6 @@ window.addEventListener("scroll", () => {
     scrollPercent = 10;
     opacity = 1;
   }
-  console.log(currentScroll + "/" + checkpoint2 + " = " + scrollPercent2 / 100);
   document.querySelector(".fade-in-section").style.transform =
     "translateX(" + scrollPercent + "%)";
   document.querySelector(".fade-in-section").style.opacity = opacity;
